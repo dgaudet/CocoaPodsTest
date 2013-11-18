@@ -7,6 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
+
+#define MOCKITO_SHORTHAND
+#import <OCMockito/OCMockito.h>
 
 @interface CocoaPodsTestTests : XCTestCase
 
@@ -28,7 +33,16 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    // mock creation
+    NSMutableArray *mockArray = mock([NSMutableArray class]);
+    
+    // using mock object
+    [mockArray addObject:@"one"];
+    [mockArray removeAllObjects];
+    
+    // verification
+    [verify(mockArray) addObject:@"one"];
+    [verify(mockArray) removeAllObjects];
 }
 
 @end
