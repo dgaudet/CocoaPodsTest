@@ -98,13 +98,25 @@
     XCTAssertEqualObjects([_helper toLowerWholeString:(aChar)], @"ab");
 }
 
-//- (void)testToLowerWholeString_ShouldReturnLowerCaseString_GivenThreeLetters
-//{
-//    NSString *aChar = @"ABC";
-//    
-//    XCTAssertEqualObjects([_helper toLowerWholeString:(aChar)], @"abc");
-//}
+- (void)testToLowerWholeString_ShouldReturnLowerCaseString_GivenThreeLetters
+{
+    NSString *aChar = @"ABC";
+    
+    XCTAssertEqualObjects([_helper toLowerWholeString:(aChar)], @"abc");
+}
 
-//empty string
+- (void)testToLowerWholeString_ShouldReturnLowerCaseString_GivenLettersAndOtherCharacters
+{
+    NSString *aChar = @"Gr3@t3st";
+    
+    XCTAssertEqualObjects([_helper toLowerWholeString:(aChar)], @"gr3@t3st");
+}
+
+- (void)testToLowerWholeString_ShouldReturnEmptyString_GivenEmptyString
+{
+    NSString *aChar = @"";
+    
+    XCTAssertEqualObjects([_helper toLowerWholeString:(aChar)], @"");
+}
 
 @end

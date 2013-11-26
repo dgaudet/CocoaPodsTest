@@ -15,7 +15,7 @@
 - (NSString *)toLower:(NSString *)original {
     NSDictionary *alphabetDict = @{@"A": @"a",
                                     @"B": @"b",
-                                    @"C": @"C",
+                                    @"C": @"c",
                                     @"D": @"d",
                                     @"E": @"e",
                                     @"F": @"f",
@@ -55,9 +55,6 @@
         loweredString = [NSString stringWithFormat: @"%@%@", loweredString, [self toLower:[original substringWithRange:(NSRange){i,1}]]];
     }
     
-//    loweredString = [NSString stringWithFormat: @"%@%@", loweredString, [self toLower:[original substringFromIndex:[original length] - 1]]];
-    
-//    loweredString = [NSString stringWithFormat: @"%@%@", loweredString, [self toLower:[original substringWithRange:(NSRange){1,1}]]];
     return loweredString;
 }
 
