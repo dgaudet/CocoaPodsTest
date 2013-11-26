@@ -13,16 +13,22 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
+#import "ViewController.h"
+
 @interface CocoaPodsTestTests : XCTestCase
 
 @end
 
-@implementation CocoaPodsTestTests
+@implementation CocoaPodsTestTests {
+    ViewController *_controller;
+}
 
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    _controller = [storyboard instantiateViewControllerWithIdentifier:@"main"];
+    [_controller performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
 }
 
 - (void)tearDown
@@ -31,7 +37,21 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testController_ShouldConnectOutlets {
+    [_controller view];
+    
+    assertThat([_controller titleLabel], is(notNilValue()));
+    XCTAssertNotNil([_controller titleLabel]);
+}
+
+- (void)testViewDidLoad_ShouldDisplay_CorrectText {
+    [_controller view];
+    
+//    [assertThat(_controller.titleLabel.text, is[@"Hello World"])];
+    XCTAssertEqualObjects(_controller.titleLabel.text, @"Hello World");
+}
+
+- (void)testMockExample
 {
     // mock creation
     NSMutableArray *mockArray = mock([NSMutableArray class]);
