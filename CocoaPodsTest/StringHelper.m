@@ -13,7 +13,7 @@
 //unichar testChar = [myString characterAtIndex:charIndex];
 
 - (NSString *)toLower:(NSString *)original {
-    NSDictionary *caseMatchDict = @{@"A": @"a",
+    NSDictionary *alphabetDict = @{@"A": @"a",
                                     @"B": @"b",
                                     @"C": @"C",
                                     @"D": @"d",
@@ -21,14 +21,44 @@
                                     @"F": @"f",
                                     @"G": @"g",
                                     @"H": @"h",
+                                    @"I": @"i",
+                                    @"J": @"j",
+                                    @"K": @"k",
+                                    @"L": @"l",
+                                    @"M": @"m",
+                                    @"N": @"n",
+                                    @"O": @"o",
+                                    @"P": @"p",
+                                    @"Q": @"q",
+                                    @"R": @"r",
+                                    @"S": @"s",
+                                    @"T": @"t",
+                                    @"U": @"u",
+                                    @"V": @"v",
+                                    @"W": @"w",
+                                    @"X": @"x",
+                                    @"Y": @"y",
+                                    @"Z": @"z",
                                     };
     
-    for (NSString *key in caseMatchDict) {
+    for (NSString *key in alphabetDict) {
         if ([original isEqualToString:key]) {
-            return [caseMatchDict objectForKey:key];
+            return [alphabetDict objectForKey:key];
         }
     }
     return original;
+}
+
+- (NSString *)toLowerWholeString:(NSString *)original {
+    NSString *loweredString = @"";
+    for (int i = 0; i < [original length]; i++) {
+        loweredString = [NSString stringWithFormat: @"%@%@", loweredString, [self toLower:[original substringWithRange:(NSRange){i,1}]]];
+    }
+    
+//    loweredString = [NSString stringWithFormat: @"%@%@", loweredString, [self toLower:[original substringFromIndex:[original length] - 1]]];
+    
+//    loweredString = [NSString stringWithFormat: @"%@%@", loweredString, [self toLower:[original substringWithRange:(NSRange){1,1}]]];
+    return loweredString;
 }
 
 @end

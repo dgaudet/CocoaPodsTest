@@ -11,6 +11,7 @@
 @interface StringHelper : NSObject
 
 - (NSString *)toLower:(NSString *)original;
+- (NSString *)toLowerWholeString:(NSString *)original;
 //replace bc with #
 
 @end

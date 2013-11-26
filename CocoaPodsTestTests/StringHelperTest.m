@@ -29,6 +29,8 @@
     [super tearDown];
 }
 
+#pragma mark - ToLower Tests
+
 - (void)testToLower_ShouldReturnLowerCaseLetter_GivenA
 {
     NSString *aChar = @"A";
@@ -64,6 +66,45 @@
     XCTAssertEqualObjects([_helper toLower:(aChar)], @"h");
 }
 
+- (void)testToLower_ShouldReturnLowerCaseLetter_GivenZ
+{
+    NSString *aChar = @"Z";
+    
+    XCTAssertEqualObjects([_helper toLower:(aChar)], @"z");
+}
+
+- (void)testToLower_ShouldReturnEmptyString_GivenEmptyString
+{
+    NSString *noChar = @"";
+    
+    XCTAssertEqualObjects([_helper toLower:(noChar)], @"");
+}
+
 //throw if string is larger than one length
+
+#pragma mark - ToLowerWholeString Tests
+
+- (void)testToLowerWholeString_ShouldReturnLowerCaseLetter_GivenA
+{
+    NSString *aChar = @"A";
+    
+    XCTAssertEqualObjects([_helper toLowerWholeString:(aChar)], @"a");
+}
+
+- (void)testToLowerWholeString_ShouldReturnLowerCaseString_GivenTwoLetters
+{
+    NSString *aChar = @"AB";
+    
+    XCTAssertEqualObjects([_helper toLowerWholeString:(aChar)], @"ab");
+}
+
+//- (void)testToLowerWholeString_ShouldReturnLowerCaseString_GivenThreeLetters
+//{
+//    NSString *aChar = @"ABC";
+//    
+//    XCTAssertEqualObjects([_helper toLowerWholeString:(aChar)], @"abc");
+//}
+
+//empty string
 
 @end
