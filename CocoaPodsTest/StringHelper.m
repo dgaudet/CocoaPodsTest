@@ -61,4 +61,42 @@
     return loweredString;
 }
 
+- (NSString *)replaceWithHash:(NSString *)replace inString:(NSString *)string {
+    NSString *token = @"#";
+    NSString *finalString = @"";
+    NSRange firstRange = [string rangeOfString:replace];
+
+    if (firstRange.location != NSNotFound) {
+        if (firstRange.location == 0 && firstRange.length == 1 && string.length == 1) {
+            finalString = token;
+        } else {
+            NSString *beforeMatch = [string substringWithRange:(NSRange){0, firstRange.location}];
+            finalString = [beforeMatch stringByAppendingString:token];
+            
+            NSString *afterMatch = [string substringFromIndex:firstRange.location + firstRange.length];
+            NSRange secondRange = [afterMatch rangeOfString:replace];
+            if (secondRange.location == NSNotFound) {
+                finalString = [finalString stringByAppendingString:afterMatch];
+            } else {
+                NSString *beforeMatch2 = [afterMatch substringWithRange:(NSRange){0, secondRange.location}];
+                finalString = [finalString stringByAppendingFormat:@"%@%@", beforeMatch2, token];
+                NSString *afterMatch2 = [afterMatch substringFromIndex:secondRange.location + secondRange.length];
+                
+                NSRange thirdRange = [afterMatch2 rangeOfString:replace];
+                if (thirdRange.location == NSNotFound) {
+                    finalString = [finalString stringByAppendingString:afterMatch2];
+                } else {
+                    NSString *beforeMatch3 = [afterMatch2 substringWithRange:(NSRange){0, thirdRange.location}];
+                    finalString = [finalString stringByAppendingFormat:@"%@%@", beforeMatch3, token];
+                    NSString *afterMatch3 = [afterMatch2 substringFromIndex:thirdRange.location + thirdRange.length];
+                    finalString = [finalString stringByAppendingString:afterMatch3];
+                }
+            }
+        }
+    } else {
+        finalString = string;
+    }
+    return finalString;
+}
+
 @end
