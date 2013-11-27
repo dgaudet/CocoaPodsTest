@@ -14,6 +14,7 @@
 #import <OCMockito/OCMockito.h>
 
 #import "MainController.h"
+#import "DGAlertView.h"
 
 @interface MainControllerTest : XCTestCase
 
@@ -52,7 +53,7 @@
     XCTAssertEqualObjects(_controller.titleLabel.text, @"College Mobile Coding Kata");
 }
 
-- (void)testLowerCaseButtonTap_ShouldInitialized {
+- (void)testLowerCaseButtonTap_ShouldBeInitializedToButton {
     [_controller view];
     
     NSArray *actions = [_controller.lowerCaseButton actionsForTarget:_controller forControlEvent:UIControlEventTouchUpInside];
@@ -60,25 +61,18 @@
     XCTAssertEqualObjects(actions[0], @"lowerCaseButtonTap");
 }
 
-
-//- (void)testLowerCaseButtonTap_ShouldLoadAlertWithCorrectTitle_GivenEmptyTextField {
-//    [_controller view];
-//    
-//    [_controller lowerCaseButtonTap];
-//}
-
-- (void)testMockExample
-{
-    // mock creation
-    NSMutableArray *mockArray = mock([NSMutableArray class]);
+- (void)testLowerCaseButtonTap_ShouldLoadAlertWithCorrectTitle_GivenEmptyTextField {
+    [_controller view];
+    DGAlertView *mockAlert = mock([DGAlertView class]);
+    _controller.alertView = mockAlert;
     
-    // using mock object
-    [mockArray addObject:@"one"];
-    [mockArray removeAllObjects];
+    //execute
+    [_controller lowerCaseButtonTap];
     
-    // verification
-    [verify(mockArray) addObject:@"one"];
-    [verify(mockArray) removeAllObjects];
+    //assert
+    [verify(mockAlert) showWithTitle:@"Test"];
 }
+
+//verify initilization sets the alert view properly
 
 @end

@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DGAlertView : UIView {
-    UIAlertView *_alert;
-}
+@interface DGAlertView : UIView
 
-- (id)initWithTitle:(NSString *)title;
-- (void)show;
+- (void)showWithTitle:(NSString *)title;
 
 @end

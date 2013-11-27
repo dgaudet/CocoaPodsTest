@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DGAlertView;
 
 @interface MainController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextField *lowerCaseTextField;
 @property (weak, nonatomic) IBOutlet UIButton *lowerCaseButton;
+@property (strong, nonatomic) DGAlertView *alertView;
 
 - (IBAction)lowerCaseButtonTap;
 

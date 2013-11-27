@@ -13,6 +13,5 @@
 - (NSString *)toLower:(NSString *)original;
 - (NSString *)toLowerWholeString:(NSString *)original;
 - (NSString *)replaceWithHash:(NSString *)replace inString:(NSString *)string;
-//replace bc with #
 
 @end

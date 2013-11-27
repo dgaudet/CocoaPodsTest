@@ -7,6 +7,7 @@
 //
 
 #import "MainController.h"
+#import "DGAlertView.h"
 
 @interface MainController ()
 
@@ -21,7 +22,7 @@
 }
 
 - (IBAction)lowerCaseButtonTap {
-    
+    [_alertView showWithTitle:@"Test"];
 }
 
 - (void)didReceiveMemoryWarning
