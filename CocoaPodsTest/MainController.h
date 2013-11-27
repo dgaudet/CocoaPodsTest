@@ -14,4 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *lowerCaseTextField;
 @property (weak, nonatomic) IBOutlet UIButton *lowerCaseButton;
 
+- (IBAction)lowerCaseButtonTap;
+
 @end

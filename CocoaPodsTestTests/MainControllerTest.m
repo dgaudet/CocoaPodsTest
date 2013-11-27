@@ -33,8 +33,9 @@
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
+    _controller = nil;
 }
 
 - (void)testController_ShouldConnectOutlets {
@@ -51,7 +52,20 @@
     XCTAssertEqualObjects(_controller.titleLabel.text, @"College Mobile Coding Kata");
 }
 
-//test empty string in lower case text field
+- (void)testLowerCaseButtonTap_ShouldInitialized {
+    [_controller view];
+    
+    NSArray *actions = [_controller.lowerCaseButton actionsForTarget:_controller forControlEvent:UIControlEventTouchUpInside];
+    XCTAssertEqual([actions count], 1U);
+    XCTAssertEqualObjects(actions[0], @"lowerCaseButtonTap");
+}
+
+
+//- (void)testLowerCaseButtonTap_ShouldLoadAlertWithCorrectTitle_GivenEmptyTextField {
+//    [_controller view];
+//    
+//    [_controller lowerCaseButtonTap];
+//}
 
 - (void)testMockExample
 {

@@ -23,6 +23,7 @@
 		053F3DB71834719800CFFA56 /* MainControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F3DB61834719800CFFA56 /* MainControllerTest.m */; };
 		056AF309184441B600F535A0 /* StringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 056AF308184441B600F535A0 /* StringHelper.m */; };
 		056AF30B184441D000F535A0 /* StringHelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 056AF30A184441D000F535A0 /* StringHelperTest.m */; };
+		059BFCAE1845A093005FBD80 /* DGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 059BFCAD1845A093005FBD80 /* DGAlertView.m */; };
 		05EEE55A1841918100507C8C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEE5591841918100507C8C /* Person.m */; };
 		05EEE55C184191C400507C8C /* PersonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEE55B184191C400507C8C /* PersonTest.m */; };
 		05EEE55D1841A0A100507C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053F3D9D1834719800CFFA56 /* Main.storyboard */; };
@@ -63,6 +64,8 @@
 		056AF307184441B600F535A0 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		056AF308184441B600F535A0 /* StringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHelper.m; sourceTree = "<group>"; };
 		056AF30A184441D000F535A0 /* StringHelperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHelperTest.m; sourceTree = "<group>"; };
+		059BFCAC1845A093005FBD80 /* DGAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGAlertView.h; sourceTree = "<group>"; };
+		059BFCAD1845A093005FBD80 /* DGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGAlertView.m; sourceTree = "<group>"; };
 		05EEE5581841918100507C8C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		05EEE5591841918100507C8C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		05EEE55B184191C400507C8C /* PersonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTest.m; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				05EEE5591841918100507C8C /* Person.m */,
 				056AF307184441B600F535A0 /* StringHelper.h */,
 				056AF308184441B600F535A0 /* StringHelper.m */,
+				059BFCAC1845A093005FBD80 /* DGAlertView.h */,
+				059BFCAD1845A093005FBD80 /* DGAlertView.m */,
 			);
 			path = CocoaPodsTest;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 				053F3DA21834719800CFFA56 /* MainController.m in Sources */,
 				053F3D9C1834719800CFFA56 /* AppDelegate.m in Sources */,
 				05EEE55A1841918100507C8C /* Person.m in Sources */,
+				059BFCAE1845A093005FBD80 /* DGAlertView.m in Sources */,
 				053F3D981834719800CFFA56 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
