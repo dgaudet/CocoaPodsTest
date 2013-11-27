@@ -11,5 +11,7 @@
 @interface MainController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *lowerCaseTextField;
+@property (weak, nonatomic) IBOutlet UIButton *lowerCaseButton;
 
 @end

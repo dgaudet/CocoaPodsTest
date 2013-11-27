@@ -40,8 +40,9 @@
 - (void)testController_ShouldConnectOutlets {
     [_controller view];
     
-    assertThat([_controller titleLabel], is(notNilValue()));
     XCTAssertNotNil([_controller titleLabel]);
+    XCTAssertNotNil([_controller lowerCaseTextField]);
+    XCTAssertNotNil([_controller lowerCaseButton]);
 }
 
 - (void)testViewDidLoad_ShouldDisplay_CorrectText {
@@ -49,6 +50,8 @@
     
     XCTAssertEqualObjects(_controller.titleLabel.text, @"College Mobile Coding Kata");
 }
+
+//test empty string in lower case text field
 
 - (void)testMockExample
 {
