@@ -67,19 +67,15 @@
     NSRange firstRange = [string rangeOfString:replace];
 
     if (firstRange.location != NSNotFound) {
-        if (firstRange.location == 0 && firstRange.length == 1 && string.length == token.length) {
-            finalString = token;
-        } else {
-            do {
-                NSString *beforeMatch = [finalString substringWithRange:(NSRange){0, firstRange.location}];
-                NSString *tempString = [beforeMatch stringByAppendingString:token];
-                
-                NSString *afterMatch = [finalString substringFromIndex:firstRange.location + firstRange.length];
-                finalString = [tempString stringByAppendingString:afterMatch];
-                
-                firstRange = [finalString rangeOfString:replace];
-            } while (firstRange.location != NSNotFound);
-        }
+        do {
+            NSString *beforeMatch = [finalString substringWithRange:(NSRange){0, firstRange.location}];
+            NSString *tempString = [beforeMatch stringByAppendingString:token];
+            
+            NSString *afterMatch = [finalString substringFromIndex:firstRange.location + firstRange.length];
+            finalString = [tempString stringByAppendingString:afterMatch];
+            
+            firstRange = [finalString rangeOfString:replace];
+        } while (firstRange.location != NSNotFound);
     }
     return finalString;
 }

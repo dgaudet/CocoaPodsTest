@@ -159,7 +159,6 @@
 }
 
 
-//multiple matches
 //should ignore case when searching
 //empty string
 //empty replacement
