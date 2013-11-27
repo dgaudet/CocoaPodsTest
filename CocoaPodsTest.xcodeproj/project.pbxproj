@@ -20,7 +20,7 @@
 		053F3DAC1834719800CFFA56 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053F3D8B1834719800CFFA56 /* Foundation.framework */; };
 		053F3DAD1834719800CFFA56 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053F3D8F1834719800CFFA56 /* UIKit.framework */; };
 		053F3DB51834719800CFFA56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 053F3DB31834719800CFFA56 /* InfoPlist.strings */; };
-		053F3DB71834719800CFFA56 /* CocoaPodsTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F3DB61834719800CFFA56 /* CocoaPodsTestTests.m */; };
+		053F3DB71834719800CFFA56 /* MainControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F3DB61834719800CFFA56 /* MainControllerTest.m */; };
 		056AF309184441B600F535A0 /* StringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 056AF308184441B600F535A0 /* StringHelper.m */; };
 		056AF30B184441D000F535A0 /* StringHelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 056AF30A184441D000F535A0 /* StringHelperTest.m */; };
 		05EEE55A1841918100507C8C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEE5591841918100507C8C /* Person.m */; };
@@ -59,7 +59,7 @@
 		053F3DAA1834719800CFFA56 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		053F3DB21834719800CFFA56 /* CocoaPodsTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CocoaPodsTestTests-Info.plist"; sourceTree = "<group>"; };
 		053F3DB41834719800CFFA56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		053F3DB61834719800CFFA56 /* CocoaPodsTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CocoaPodsTestTests.m; sourceTree = "<group>"; };
+		053F3DB61834719800CFFA56 /* MainControllerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControllerTest.m; sourceTree = "<group>"; };
 		056AF307184441B600F535A0 /* StringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringHelper.h; sourceTree = "<group>"; };
 		056AF308184441B600F535A0 /* StringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHelper.m; sourceTree = "<group>"; };
 		056AF30A184441D000F535A0 /* StringHelperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringHelperTest.m; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		053F3DB01834719800CFFA56 /* CocoaPodsTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				053F3DB61834719800CFFA56 /* CocoaPodsTestTests.m */,
+				053F3DB61834719800CFFA56 /* MainControllerTest.m */,
 				05EEE55B184191C400507C8C /* PersonTest.m */,
 				056AF30A184441D000F535A0 /* StringHelperTest.m */,
 				053F3DB11834719800CFFA56 /* Supporting Files */,
@@ -324,7 +324,7 @@
 				056AF30B184441D000F535A0 /* StringHelperTest.m in Sources */,
 				05EEE55E1841A13200507C8C /* MainController.m in Sources */,
 				05EEE55C184191C400507C8C /* PersonTest.m in Sources */,
-				053F3DB71834719800CFFA56 /* CocoaPodsTestTests.m in Sources */,
+				053F3DB71834719800CFFA56 /* MainControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

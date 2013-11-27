@@ -15,11 +15,11 @@
 
 #import "MainController.h"
 
-@interface CocoaPodsTestTests : XCTestCase
+@interface MainControllerTest : XCTestCase
 
 @end
 
-@implementation CocoaPodsTestTests {
+@implementation MainControllerTest {
     MainController *_controller;
 }
 
@@ -47,8 +47,7 @@
 - (void)testViewDidLoad_ShouldDisplay_CorrectText {
     [_controller view];
     
-//    [assertThat(_controller.titleLabel.text, is[@"Hello World"])];
-    XCTAssertEqualObjects(_controller.titleLabel.text, @"Hello World");
+    XCTAssertEqualObjects(_controller.titleLabel.text, @"College Mobile Coding Kata");
 }
 
 - (void)testMockExample
