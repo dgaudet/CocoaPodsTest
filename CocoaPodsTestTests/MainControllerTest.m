@@ -13,14 +13,14 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
-#import "ViewController.h"
+#import "MainController.h"
 
-@interface CocoaPodsTestTests : XCTestCase
+@interface MainControllerTest : XCTestCase
 
 @end
 
-@implementation CocoaPodsTestTests {
-    ViewController *_controller;
+@implementation MainControllerTest {
+    MainController *_controller;
 }
 
 - (void)setUp
@@ -33,23 +33,39 @@
 
 - (void)tearDown
 {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    
+    _controller = nil;
 }
 
 - (void)testController_ShouldConnectOutlets {
     [_controller view];
     
-    assertThat([_controller titleLabel], is(notNilValue()));
     XCTAssertNotNil([_controller titleLabel]);
+    XCTAssertNotNil([_controller lowerCaseTextField]);
+    XCTAssertNotNil([_controller lowerCaseButton]);
 }
 
 - (void)testViewDidLoad_ShouldDisplay_CorrectText {
     [_controller view];
     
-//    [assertThat(_controller.titleLabel.text, is[@"Hello World"])];
-    XCTAssertEqualObjects(_controller.titleLabel.text, @"Hello World");
+    XCTAssertEqualObjects(_controller.titleLabel.text, @"College Mobile Coding Kata");
 }
+
+- (void)testLowerCaseButtonTap_ShouldInitialized {
+    [_controller view];
+    
+    NSArray *actions = [_controller.lowerCaseButton actionsForTarget:_controller forControlEvent:UIControlEventTouchUpInside];
+    XCTAssertEqual([actions count], 1U);
+    XCTAssertEqualObjects(actions[0], @"lowerCaseButtonTap");
+}
+
+
+//- (void)testLowerCaseButtonTap_ShouldLoadAlertWithCorrectTitle_GivenEmptyTextField {
+//    [_controller view];
+//    
+//    [_controller lowerCaseButtonTap];
+//}
 
 - (void)testMockExample
 {

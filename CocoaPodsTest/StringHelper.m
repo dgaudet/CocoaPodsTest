@@ -58,4 +58,21 @@
     return loweredString;
 }
 
+- (NSString *)replaceWithHash:(NSString *)replace inString:(NSString *)string {
+    NSString *token = @"#";
+    NSString *finalString = string;
+    NSRange match = [finalString rangeOfString:replace options:NSCaseInsensitiveSearch];
+
+    while(match.location != NSNotFound) {
+        NSString *beforeMatch = [finalString substringWithRange:(NSRange){0, match.location}];
+        NSString *tempString = [beforeMatch stringByAppendingString:token];
+        
+        NSString *afterMatch = [finalString substringFromIndex:match.location + match.length];
+        finalString = [tempString stringByAppendingString:afterMatch];
+        
+        match = [finalString rangeOfString:replace options:NSCaseInsensitiveSearch];
+    }
+    return finalString;
+}
+
 @end
