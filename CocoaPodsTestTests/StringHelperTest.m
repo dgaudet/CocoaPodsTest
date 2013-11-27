@@ -158,10 +158,46 @@
     XCTAssertEqualObjects([_helper replaceWithHash:@"b" inString:string], @"a#c#def#d");
 }
 
+- (void)testReplaceWithHash_ShouldReplaceMatchWithHash_GivenUppercaseMatcher {
+    NSString *string = @"abcbdefbd";
+    
+    XCTAssertEqualObjects([_helper replaceWithHash:@"B" inString:string], @"a#c#def#d");
+}
 
-//should ignore case when searching
-//empty string
-//empty replacement
-//both empty
+- (void)testReplaceWithHash_ShouldReplaceMatchWithHash_GivenStringMatcher {
+    NSString *string = @"BAD";
+    
+    XCTAssertEqualObjects([_helper replaceWithHash:@"b" inString:string], @"#AD");
+}
+
+- (void)testReplaceWithHash_ShouldReturnEmptyString_GivenEmptyString {
+    NSString *string = @"";
+    
+    XCTAssertEqualObjects([_helper replaceWithHash:@"b" inString:string], @"");
+}
+
+- (void)testReplaceWithHash_ShouldReturnOriginalString_GivenEmptyMatcher {
+    NSString *string = @"";
+    
+    XCTAssertEqualObjects([_helper replaceWithHash:@"" inString:string], string);
+}
+
+- (void)testReplaceWithHash_ShouldReturnEmptyString_GivenEmptyStringAndMatcher {
+    NSString *string = @"";
+    
+    XCTAssertEqualObjects([_helper replaceWithHash:@"" inString:string], @"");
+}
+
+- (void)testReplaceWithHash_ShouldReplaceMatchWithHash_GivenMatcherWithMutlipleChars {
+    NSString *string = @"abc";
+    
+    XCTAssertEqualObjects([_helper replaceWithHash:@"bc" inString:string], @"a#");
+}
+
+- (void)testReplaceWithHash_ShouldReplaceMatchWithHash_GivenMultipleMatchesAndMatcherWithMutlipleChars {
+    NSString *string = @"bcdebc";
+    
+    XCTAssertEqualObjects([_helper replaceWithHash:@"bc" inString:string], @"#de#");
+}
 
 @end
