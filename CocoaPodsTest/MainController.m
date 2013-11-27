@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 DeanGaudet. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainController.h"
 
-@interface ViewController ()
+@interface MainController ()
 
 @end
 
-@implementation ViewController
+@implementation MainController
 
 - (void)viewDidLoad
 {

@@ -13,14 +13,14 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
-#import "ViewController.h"
+#import "MainController.h"
 
 @interface CocoaPodsTestTests : XCTestCase
 
 @end
 
 @implementation CocoaPodsTestTests {
-    ViewController *_controller;
+    MainController *_controller;
 }
 
 - (void)setUp
