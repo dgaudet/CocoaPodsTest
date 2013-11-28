@@ -41,6 +41,12 @@
     [_alertView showWithTitle:title message:message];
 }
 
+- (IBAction)replaceButtonTap {
+    NSString *title = @"Please enter a string to search for replacements, and a match for replacing";
+    NSString *message = @"";
+    [_alertView showWithTitle:title message:message];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

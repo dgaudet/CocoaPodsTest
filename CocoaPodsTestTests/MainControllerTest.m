@@ -46,6 +46,8 @@
     XCTAssertNotNil([_controller lowerCaseLabel]);
     XCTAssertNotNil([_controller lowerCaseTextField]);
     XCTAssertNotNil([_controller lowerCaseButton]);
+    XCTAssertNotNil([_controller replaceButton]);
+    XCTAssertNotNil([_controller replaceMatcherTextField]);
 }
 
 - (void)testController_ShouldBeInitializeProperly {
@@ -55,8 +57,12 @@
 
 - (void)testViewDidLoad_ShouldDisplay_CorrectTextForLabelsAndButtons {
     XCTAssertEqualObjects(_controller.titleLabel.text, @"College Mobile Coding Kata");
-    XCTAssertEqualObjects(_controller.lowerCaseLabel.text, @"Enter text tap Lower and be amazed:");
+    XCTAssertEqualObjects(_controller.lowerCaseLabel.text, @"Enter text -> tap 'Lower' and be amazed:");
     XCTAssertEqualObjects(_controller.lowerCaseButton.titleLabel.text, @"Lower");
+    XCTAssertEqualObjects(_controller.replaceButton.titleLabel.text, @"Replace");
+    
+    XCTAssertEqualObjects(_controller.lowerCaseTextField.text, @"");
+    XCTAssertEqualObjects(_controller.replaceMatcherTextField.text, @"b");
 }
 
 - (void)testLowerCaseButtonTap_ShouldBeInitializedToButton {
@@ -82,12 +88,12 @@
     StringHelper *mockHelper = mock([StringHelper class]);
     _controller.alertView = mockAlert;
     _controller.stringHelper = mockHelper;
-    NSString *test = @"LOWERme";
-    _controller.lowerCaseTextField.text = test;
+    NSString *stringToLower = @"LOWERme";
+    _controller.lowerCaseTextField.text = stringToLower;
     
-    NSString *expectedTitle = [NSString stringWithFormat:@"Original: %@", test];
+    NSString *expectedTitle = [NSString stringWithFormat:@"Original: %@", stringToLower];
     NSString *expectedMessage = @"lowered";
-    [given([mockHelper toLowerWholeString:test]) willReturn:expectedMessage];
+    [given([mockHelper toLowerWholeString:stringToLower]) willReturn:expectedMessage];
     
     //execute
     [_controller lowerCaseButtonTap];
@@ -97,5 +103,49 @@
 }
 
 //enter should invoke the correct method
+
+- (void)testReplaceButtonTap_ShouldBeInitializedToButton {
+    NSArray *actions = [_controller.replaceButton actionsForTarget:_controller forControlEvent:UIControlEventTouchUpInside];
+    
+    XCTAssertEqual([actions count], 1U);
+    XCTAssertEqualObjects(actions[0], @"replaceButtonTap");
+}
+
+- (void)testReplaceButtonTap_ShouldLoadAlertWithCorrectTitleAndMessage_GivenEmptyLowerCaseTextField {
+    DGAlertView *mockAlert = mock([DGAlertView class]);
+    _controller.alertView = mockAlert;
+    
+    //execute
+    [_controller replaceButtonTap];
+    
+    //assert
+    [verify(mockAlert) showWithTitle:@"Please enter a string to search for replacements, and a match for replacing" message:@""];
+}
+
+- (void)testReplaceButtonTap_ShouldLoadAlertWithCorrectTitleAndMessage_GivenEmptyReplaceMatcherTextField {
+    DGAlertView *mockAlert = mock([DGAlertView class]);
+    _controller.alertView = mockAlert;
+    NSString *stringToBeReplaced = @"LOWERme";
+    _controller.lowerCaseTextField.text = stringToBeReplaced;
+    
+    //execute
+    [_controller replaceButtonTap];
+    
+    //assert
+    [verify(mockAlert) showWithTitle:@"Please enter a string to search for replacements, and a match for replacing" message:@""];
+}
+
+- (void)testReplaceButtonTap_ShouldLoadAlertWithCorrectTitleAndMessage_GivenEmptyLowerCaseAndReplaceMatcherTextFields {
+    DGAlertView *mockAlert = mock([DGAlertView class]);
+    _controller.alertView = mockAlert;
+    _controller.lowerCaseTextField.text = @"";
+    _controller.replaceMatcherTextField.text = @"";
+    
+    //execute
+    [_controller replaceButtonTap];
+    
+    //assert
+    [verify(mockAlert) showWithTitle:@"Please enter a string to search for replacements, and a match for replacing" message:@""];
+}
 
 @end
