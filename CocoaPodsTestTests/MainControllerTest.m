@@ -43,6 +43,7 @@
 
 - (void)testController_ShouldConnectOutlets {
     XCTAssertNotNil([_controller titleLabel]);
+    XCTAssertNotNil([_controller lowerCaseLabel]);
     XCTAssertNotNil([_controller lowerCaseTextField]);
     XCTAssertNotNil([_controller lowerCaseButton]);
 }
@@ -52,8 +53,10 @@
     XCTAssertTrue([_controller.stringHelper isKindOfClass:[StringHelper class]]);
 }
 
-- (void)testViewDidLoad_ShouldDisplay_CorrectText {
+- (void)testViewDidLoad_ShouldDisplay_CorrectTextForLabelsAndButtons {
     XCTAssertEqualObjects(_controller.titleLabel.text, @"College Mobile Coding Kata");
+    XCTAssertEqualObjects(_controller.lowerCaseLabel.text, @"Enter text tap Lower and be amazed:");
+    XCTAssertEqualObjects(_controller.lowerCaseButton.titleLabel.text, @"Lower");
 }
 
 - (void)testLowerCaseButtonTap_ShouldBeInitializedToButton {
