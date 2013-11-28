@@ -8,12 +8,22 @@
 
 #import "MainController.h"
 #import "DGAlertView.h"
+#import "StringHelper.h"
 
 @interface MainController ()
 
 @end
 
 @implementation MainController
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _alertView = [[DGAlertView alloc] init];
+        _stringHelper = [[StringHelper alloc] init];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -22,7 +32,13 @@
 }
 
 - (IBAction)lowerCaseButtonTap {
-    [_alertView showWithTitle:@"Test"];
+    NSString *title = @"Please enter a string to lower case";
+    NSString *message = @"";
+    if (_lowerCaseTextField.text.length > 1) {
+        title = [NSString stringWithFormat:@"Original: %@", _lowerCaseTextField.text];
+        message = [_stringHelper toLowerWholeString:_lowerCaseTextField.text];
+    }
+    [_alertView showWithTitle:title message:message];
 }
 
 - (void)didReceiveMemoryWarning

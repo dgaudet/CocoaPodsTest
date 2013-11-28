@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @class DGAlertView;
+@class StringHelper;
 
 @interface MainController : UIViewController
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *lowerCaseTextField;
 @property (weak, nonatomic) IBOutlet UIButton *lowerCaseButton;
 @property (strong, nonatomic) DGAlertView *alertView;
+@property (strong, nonatomic) StringHelper *stringHelper;
 
 - (IBAction)lowerCaseButtonTap;
 

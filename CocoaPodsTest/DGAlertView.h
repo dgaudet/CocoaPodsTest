@@ -10,6 +10,6 @@
 
 @interface DGAlertView : UIView
 
-- (void)showWithTitle:(NSString *)title;
+- (void)showWithTitle:(NSString *)title message:(NSString *)message;
 
 @end

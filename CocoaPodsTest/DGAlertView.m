@@ -10,8 +10,8 @@
 
 @implementation DGAlertView
 
-- (void)showWithTitle:(NSString *)title {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:@"" delegate:Nil cancelButtonTitle:nil otherButtonTitles:nil];
+- (void)showWithTitle:(NSString *)title message:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:Nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     [alert show];
 }
 
