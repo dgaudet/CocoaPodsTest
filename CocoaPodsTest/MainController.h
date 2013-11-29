@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lowerCaseLabel;
 @property (weak, nonatomic) IBOutlet UITextField *lowerCaseTextField;
 @property (weak, nonatomic) IBOutlet UIButton *lowerCaseButton;
+@property (weak, nonatomic) IBOutlet UILabel *replaceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *replaceButton;
 @property (weak, nonatomic) IBOutlet UITextField *replaceMatcherTextField;
 @property (strong, nonatomic) DGAlertView *alertView;

@@ -35,8 +35,9 @@
 }
 
 - (void)setupColors{
-    _lowerCaseButton.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
-    _lowerCaseButton.titleLabel.textColor = [UIColor whiteColor];
+    UIColor *collegeMobileRed = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
+    _lowerCaseButton.backgroundColor = collegeMobileRed;
+    _replaceButton.backgroundColor = collegeMobileRed;
 }
 
 - (IBAction)lowerCaseButtonTap {
