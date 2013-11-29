@@ -12,6 +12,8 @@
 
 @interface MainController ()
 
+- (void)hideKeyboard;
+
 @end
 
 @implementation MainController
@@ -32,9 +34,10 @@
 }
 
 - (IBAction)lowerCaseButtonTap {
+    [self hideKeyboard];
     NSString *title = @"Please enter a string to lower case";
     NSString *message = @"";
-    if (_lowerCaseTextField.text.length > 1) {
+    if (_lowerCaseTextField.text.length > 0) {
         title = [NSString stringWithFormat:@"Original: %@", _lowerCaseTextField.text];
         message = [_stringHelper toLowerWholeString:_lowerCaseTextField.text];
     }
@@ -42,9 +45,19 @@
 }
 
 - (IBAction)replaceButtonTap {
+    [self hideKeyboard];
     NSString *title = @"Please enter a string to search for replacements, and a match for replacing";
     NSString *message = @"";
+    if (_lowerCaseTextField.text.length > 0 && _replaceMatcherTextField.text.length > 0) {
+        title = [NSString stringWithFormat:@"Original: %@", _lowerCaseTextField.text];
+        message = [_stringHelper replaceWithHash:_replaceMatcherTextField.text inString:_lowerCaseTextField.text];
+    }
     [_alertView showWithTitle:title message:message];
+}
+
+- (void)hideKeyboard {
+    [_lowerCaseTextField resignFirstResponder];
+    [_replaceMatcherTextField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

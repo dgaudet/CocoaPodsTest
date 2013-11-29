@@ -127,6 +127,7 @@
     _controller.alertView = mockAlert;
     NSString *stringToBeReplaced = @"LOWERme";
     _controller.lowerCaseTextField.text = stringToBeReplaced;
+    _controller.replaceMatcherTextField.text = @"";
     
     //execute
     [_controller replaceButtonTap];
@@ -146,6 +147,56 @@
     
     //assert
     [verify(mockAlert) showWithTitle:@"Please enter a string to search for replacements, and a match for replacing" message:@""];
+}
+
+- (void)testReplaceButtonTap_ShouldLoadAlertWithCorrectTitleAndMessage_GivenValidInputTextField {
+    DGAlertView *mockAlert = mock([DGAlertView class]);
+    StringHelper *mockHelper = mock([StringHelper class]);
+    _controller.alertView = mockAlert;
+    _controller.stringHelper = mockHelper;
+    NSString *stringToBeReplaced = @"LOWERme";
+    _controller.lowerCaseTextField.text = stringToBeReplaced;
+    NSString *stringMatcher = @"f";
+    _controller.replaceMatcherTextField.text = stringMatcher;
+    
+    NSString *expectedTitle = [NSString stringWithFormat:@"Original: %@", stringToBeReplaced];
+    NSString *expectedMessage = @"replaced string";
+    
+    [given([mockHelper replaceWithHash:stringMatcher inString:stringToBeReplaced]) willReturn:expectedMessage];
+    
+    //execute
+    [_controller replaceButtonTap];
+    
+    //assert
+    [verify(mockAlert) showWithTitle:expectedTitle message:expectedMessage];
+}
+
+- (void)testLowerCaseButtonTap_ShouldHideKeyboard {
+    UITextField *mockLowerCaseTextField = mock([UITextField class]);
+    _controller.lowerCaseTextField = mockLowerCaseTextField;
+    UITextField *mockReplaceTextField = mock([UITextField class]);
+    _controller.replaceMatcherTextField = mockReplaceTextField;
+    
+    //execute
+    [_controller lowerCaseButtonTap];
+    
+    //assert
+    [verify(mockLowerCaseTextField) resignFirstResponder];
+    [verify(mockReplaceTextField) resignFirstResponder];
+}
+
+- (void)testReplaceButtonTap_ShouldHideKeyboard {
+    UITextField *mockLowerCaseTextField = mock([UITextField class]);
+    _controller.lowerCaseTextField = mockLowerCaseTextField;
+    UITextField *mockReplaceTextField = mock([UITextField class]);
+    _controller.replaceMatcherTextField = mockReplaceTextField;
+    
+    //execute
+    [_controller replaceButtonTap];
+    
+    //assert
+    [verify(mockLowerCaseTextField) resignFirstResponder];
+    [verify(mockReplaceTextField) resignFirstResponder];
 }
 
 @end
