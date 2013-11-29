@@ -13,7 +13,7 @@
 @interface MainController ()
 
 - (void)hideKeyboard;
-- (void)setupColors;
+- (void)setupColorAndBackground;
 
 @end
 
@@ -31,13 +31,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupColors];
+    [self setupColorAndBackground];
 }
 
-- (void)setupColors{
-    UIColor *collegeMobileRed = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
-    _lowerCaseButton.backgroundColor = collegeMobileRed;
-    _replaceButton.backgroundColor = collegeMobileRed;
+- (void)setupColorAndBackground {
+//    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundSmall"]];
+//    backgroundImage.contentMode = UIViewContentModeScaleAspectFit;
+//    [self.view addSubview:backgroundImage];
+//    [self.view sendSubviewToBack:backgroundImage];
+    
+    UIColor *collegeMobileRedColor = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
+    UIColor *customGrayColor = [UIColor colorWithRed:0.867 green:0.867 blue:0.867 alpha:1.0];
+    [_lowerCaseButton setTitleColor:collegeMobileRedColor forState:UIControlStateNormal];
+    _lowerCaseButton.backgroundColor = customGrayColor;
+    _lowerCaseTextField.layer.masksToBounds = YES;
+    _lowerCaseTextField.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+    _lowerCaseTextField.layer.borderWidth = 1.0f;
+    
+    [_replaceButton setTitleColor:collegeMobileRedColor forState:UIControlStateNormal];
+    _replaceButton.backgroundColor = customGrayColor;
+    _replaceMatcherTextField.layer.masksToBounds = YES;
+    _replaceMatcherTextField.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+    _replaceMatcherTextField.layer.borderWidth = 1.0f;
 }
 
 - (IBAction)lowerCaseButtonTap {
@@ -71,6 +86,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 @end
