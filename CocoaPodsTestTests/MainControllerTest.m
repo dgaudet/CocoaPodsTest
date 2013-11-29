@@ -55,10 +55,10 @@
     XCTAssertTrue([_controller.stringHelper isKindOfClass:[StringHelper class]]);
 }
 
-- (void)testViewDidLoad_ShouldDisplay_CorrectTextForLabelsAndButtons {
-    XCTAssertEqualObjects(_controller.titleLabel.text, @"College Mobile Coding Kata");
-    XCTAssertEqualObjects(_controller.lowerCaseLabel.text, @"Enter text -> tap 'Lower' and be amazed:");
-    XCTAssertEqualObjects(_controller.lowerCaseButton.titleLabel.text, @"Lower");
+- (void)testViewDidLoad_ShouldDisplayCorrectTextForLabelsAndButtons {
+    XCTAssertEqualObjects(_controller.titleLabel.text, @"CollegeMobile Coding Kata");
+    XCTAssertEqualObjects(_controller.lowerCaseLabel.text, @"Enter text here:");
+    XCTAssertEqualObjects(_controller.lowerCaseButton.titleLabel.text, @"Tap to lower case the text");
     XCTAssertEqualObjects(_controller.replaceButton.titleLabel.text, @"Replace");
     
     XCTAssertEqualObjects(_controller.lowerCaseTextField.text, @"");

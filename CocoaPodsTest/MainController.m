@@ -13,6 +13,7 @@
 @interface MainController ()
 
 - (void)hideKeyboard;
+- (void)setupColors;
 
 @end
 
@@ -30,7 +31,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self setupColors];
+}
+
+- (void)setupColors{
+    _lowerCaseButton.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
+    _lowerCaseButton.titleLabel.textColor = [UIColor whiteColor];
 }
 
 - (IBAction)lowerCaseButtonTap {
