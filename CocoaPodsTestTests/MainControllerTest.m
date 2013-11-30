@@ -46,6 +46,7 @@
     XCTAssertNotNil([_controller lowerCaseLabel]);
     XCTAssertNotNil([_controller lowerCaseTextField]);
     XCTAssertNotNil([_controller lowerCaseButton]);
+    XCTAssertNotNil([_controller replaceLabel]);
     XCTAssertNotNil([_controller replaceButton]);
     XCTAssertNotNil([_controller replaceMatcherTextField]);
 }
@@ -58,8 +59,9 @@
 - (void)testViewDidLoad_ShouldDisplayCorrectTextForLabelsAndButtons {
     XCTAssertEqualObjects(_controller.titleLabel.text, @"CollegeMobile Coding Kata");
     XCTAssertEqualObjects(_controller.lowerCaseLabel.text, @"Enter text here:");
-    XCTAssertEqualObjects(_controller.lowerCaseButton.titleLabel.text, @"Tap to lower case the text");
-    XCTAssertEqualObjects(_controller.replaceButton.titleLabel.text, @"Replace");
+    XCTAssertEqualObjects(_controller.lowerCaseButton.titleLabel.text, @"Tap to lower case the above text");
+    XCTAssertEqualObjects(_controller.replaceLabel.text, @"Enter text to be replaced:");
+    XCTAssertEqualObjects(_controller.replaceButton.titleLabel.text, @"View the first text with any occurance of the second text replaced by hash");
     
     XCTAssertEqualObjects(_controller.lowerCaseTextField.text, @"");
     XCTAssertEqualObjects(_controller.replaceMatcherTextField.text, @"b");

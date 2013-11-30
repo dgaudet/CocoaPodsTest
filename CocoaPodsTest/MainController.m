@@ -13,7 +13,7 @@
 @interface MainController ()
 
 - (void)hideKeyboard;
-- (void)setupColors;
+- (void)setupColorAndBackground;
 
 @end
 
@@ -31,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupColors];
+    [self setupColorAndBackground];
 }
 
 - (void)setupColors{
@@ -71,6 +71,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 @end
