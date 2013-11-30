@@ -35,6 +35,7 @@
 }
 
 - (void)setupColors{
+//    http://scratch.johnnypez.com/hex-to-uicolor/
     _lowerCaseButton.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
     _lowerCaseButton.titleLabel.textColor = [UIColor whiteColor];
 }
