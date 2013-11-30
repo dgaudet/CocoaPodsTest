@@ -61,7 +61,7 @@
     XCTAssertEqualObjects(_controller.lowerCaseLabel.text, @"Enter text here:");
     XCTAssertEqualObjects(_controller.lowerCaseButton.titleLabel.text, @"Tap to lower case the above text");
     XCTAssertEqualObjects(_controller.replaceLabel.text, @"Enter text to be replaced:");
-    XCTAssertEqualObjects(_controller.replaceButton.titleLabel.text, @"View the first text with any occurance of the second text replaced by hash");
+    XCTAssertEqualObjects(_controller.replaceButton.titleLabel.text, @"Tap to replace any item in the first text that matches replacement text by hash");
     
     XCTAssertEqualObjects(_controller.lowerCaseTextField.text, @"");
     XCTAssertEqualObjects(_controller.replaceMatcherTextField.text, @"b");
@@ -93,9 +93,10 @@
     NSString *stringToLower = @"LOWERme";
     _controller.lowerCaseTextField.text = stringToLower;
     
-    NSString *expectedTitle = [NSString stringWithFormat:@"Original: %@", stringToLower];
-    NSString *expectedMessage = @"lowered";
-    [given([mockHelper toLowerWholeString:stringToLower]) willReturn:expectedMessage];
+    NSString *expectedMessage = [NSString stringWithFormat:@"Original: %@", stringToLower];
+    NSString *loweredText = @"lowered";
+    [given([mockHelper toLowerWholeString:stringToLower]) willReturn:loweredText];
+    NSString *expectedTitle = [NSString stringWithFormat:@"Lowered: %@", loweredText];
     
     //execute
     [_controller lowerCaseButtonTap];
@@ -161,10 +162,11 @@
     NSString *stringMatcher = @"f";
     _controller.replaceMatcherTextField.text = stringMatcher;
     
-    NSString *expectedTitle = [NSString stringWithFormat:@"Original: %@", stringToBeReplaced];
-    NSString *expectedMessage = @"replaced string";
+    NSString *expectedMessage = [NSString stringWithFormat:@"Original: %@", stringToBeReplaced];
+    NSString *replacedString = @"replaced string";
     
-    [given([mockHelper replaceWithHash:stringMatcher inString:stringToBeReplaced]) willReturn:expectedMessage];
+    [given([mockHelper replaceWithHash:stringMatcher inString:stringToBeReplaced]) willReturn:replacedString];
+    NSString *expectedTitle = [NSString stringWithFormat:@"Result: %@", replacedString];
     
     //execute
     [_controller replaceButtonTap];

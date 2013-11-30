@@ -34,10 +34,25 @@
     [self setupColorAndBackground];
 }
 
-- (void)setupColors{
-//    http://scratch.johnnypez.com/hex-to-uicolor/
-    _lowerCaseButton.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
-    _lowerCaseButton.titleLabel.textColor = [UIColor whiteColor];
+- (void)setupColorAndBackground {
+//    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundSmall"]];
+//    backgroundImage.contentMode = UIViewContentModeScaleAspectFit;
+//    [self.view addSubview:backgroundImage];
+//    [self.view sendSubviewToBack:backgroundImage];
+    
+    UIColor *collegeMobileRedColor = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
+    UIColor *customGrayColor = [UIColor colorWithRed:0.867 green:0.867 blue:0.867 alpha:1.0];
+    [_lowerCaseButton setTitleColor:collegeMobileRedColor forState:UIControlStateNormal];
+    _lowerCaseButton.backgroundColor = customGrayColor;
+    _lowerCaseTextField.layer.masksToBounds = YES;
+    _lowerCaseTextField.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+    _lowerCaseTextField.layer.borderWidth = 1.0f;
+    
+    [_replaceButton setTitleColor:collegeMobileRedColor forState:UIControlStateNormal];
+    _replaceButton.backgroundColor = customGrayColor;
+    _replaceMatcherTextField.layer.masksToBounds = YES;
+    _replaceMatcherTextField.layer.borderColor = [[UIColor lightGrayColor]CGColor];
+    _replaceMatcherTextField.layer.borderWidth = 1.0f;
 }
 
 - (IBAction)lowerCaseButtonTap {
@@ -45,8 +60,9 @@
     NSString *title = @"Please enter a string to lower case";
     NSString *message = @"";
     if (_lowerCaseTextField.text.length > 0) {
-        title = [NSString stringWithFormat:@"Original: %@", _lowerCaseTextField.text];
-        message = [_stringHelper toLowerWholeString:_lowerCaseTextField.text];
+        message = [NSString stringWithFormat:@"Original: %@", _lowerCaseTextField.text];
+        NSString *loweredText = [_stringHelper toLowerWholeString:_lowerCaseTextField.text];
+        title = [NSString stringWithFormat:@"Lowered: %@", loweredText];
     }
     [_alertView showWithTitle:title message:message];
 }
@@ -56,8 +72,9 @@
     NSString *title = @"Please enter a string to search for replacements, and a match for replacing";
     NSString *message = @"";
     if (_lowerCaseTextField.text.length > 0 && _replaceMatcherTextField.text.length > 0) {
-        title = [NSString stringWithFormat:@"Original: %@", _lowerCaseTextField.text];
-        message = [_stringHelper replaceWithHash:_replaceMatcherTextField.text inString:_lowerCaseTextField.text];
+        message = [NSString stringWithFormat:@"Original: %@", _lowerCaseTextField.text];
+        NSString *replacedText = [_stringHelper replaceWithHash:_replaceMatcherTextField.text inString:_lowerCaseTextField.text];
+        title = [NSString stringWithFormat:@"Result: %@", replacedText];
     }
     [_alertView showWithTitle:title message:message];
 }
