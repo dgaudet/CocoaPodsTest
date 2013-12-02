@@ -30,6 +30,9 @@
 		05EEE55C184191C400507C8C /* PersonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEE55B184191C400507C8C /* PersonTest.m */; };
 		05EEE55D1841A0A100507C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053F3D9D1834719800CFFA56 /* Main.storyboard */; };
 		05EEE55E1841A13200507C8C /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F3DA11834719800CFFA56 /* MainController.m */; };
+		6587E47D184D0BC9003C5255 /* Fist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6587E47B184D0BC9003C5255 /* Fist@2x.png */; };
+		6587E47F184D0DE4003C5255 /* Spotlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 6587E47E184D0DE4003C5255 /* Spotlight.png */; };
+		6587E481184D0E2B003C5255 /* Fist.png in Resources */ = {isa = PBXBuildFile; fileRef = 6587E480184D0E2B003C5255 /* Fist.png */; };
 		66285A8CEF924E7A95C0DFF9 /* libPods-CocoaPodsTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8B0A9B707F4946934DF3FC /* libPods-CocoaPodsTestTests.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		05EEE5591841918100507C8C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		05EEE55B184191C400507C8C /* PersonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTest.m; sourceTree = "<group>"; };
 		3B8B0A9B707F4946934DF3FC /* libPods-CocoaPodsTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPodsTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6587E47B184D0BC9003C5255 /* Fist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fist@2x.png"; sourceTree = "<group>"; };
+		6587E47E184D0DE4003C5255 /* Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotlight.png; sourceTree = "<group>"; };
+		6587E480184D0E2B003C5255 /* Fist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fist.png; sourceTree = "<group>"; };
 		7625AEB7C202497F927A734A /* Pods-CocoaPodsTestTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPodsTestTests.xcconfig"; path = "Pods/Pods-CocoaPodsTestTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +163,9 @@
 		053F3D921834719800CFFA56 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6587E480184D0E2B003C5255 /* Fist.png */,
+				6587E47B184D0BC9003C5255 /* Fist@2x.png */,
+				6587E47E184D0DE4003C5255 /* Spotlight.png */,
 				05A9E545184C00A6005B6ECE /* background.png */,
 				05A9E546184C00A6005B6ECE /* background1136.png */,
 				053F3D931834719800CFFA56 /* CocoaPodsTest-Info.plist */,
@@ -266,9 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				053F3DA41834719800CFFA56 /* Images.xcassets in Resources */,
+				6587E481184D0E2B003C5255 /* Fist.png in Resources */,
 				05A9E547184C00A6005B6ECE /* background.png in Resources */,
 				05A9E548184C00A6005B6ECE /* background1136.png in Resources */,
 				053F3D961834719800CFFA56 /* InfoPlist.strings in Resources */,
+				6587E47D184D0BC9003C5255 /* Fist@2x.png in Resources */,
+				6587E47F184D0DE4003C5255 /* Spotlight.png in Resources */,
 				053F3D9F1834719800CFFA56 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
