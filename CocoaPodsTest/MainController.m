@@ -35,10 +35,17 @@
 }
 
 - (void)setupColorAndBackground {
-//    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"backgroundSmall"]];
-//    backgroundImage.contentMode = UIViewContentModeScaleAspectFit;
-//    [self.view addSubview:backgroundImage];
-//    [self.view sendSubviewToBack:backgroundImage];
+    CGRect backgroundRect = [[UIScreen mainScreen] bounds];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:backgroundRect];
+    UIImage *backgroundImage = [UIImage imageNamed:@"background"];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    if (screenRect.size.height == 568) {
+        backgroundImage = [UIImage imageNamed:@"background1136"];
+    }
+    [backgroundView setImage:backgroundImage];
+    [self.view addSubview:backgroundView];
+    [self.view sendSubviewToBack:backgroundView];
+
     
     UIColor *collegeMobileRedColor = [UIColor colorWithRed:1 green:0 blue:0.063 alpha:1.0];
     UIColor *customGrayColor = [UIColor colorWithRed:0.867 green:0.867 blue:0.867 alpha:1.0];
