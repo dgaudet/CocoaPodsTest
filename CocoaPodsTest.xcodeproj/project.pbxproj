@@ -26,8 +26,6 @@
 		059BFCAE1845A093005FBD80 /* DGAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 059BFCAD1845A093005FBD80 /* DGAlertView.m */; };
 		05A9E547184C00A6005B6ECE /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 05A9E545184C00A6005B6ECE /* background.png */; };
 		05A9E548184C00A6005B6ECE /* background1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 05A9E546184C00A6005B6ECE /* background1136.png */; };
-		05EEE55A1841918100507C8C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEE5591841918100507C8C /* Person.m */; };
-		05EEE55C184191C400507C8C /* PersonTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EEE55B184191C400507C8C /* PersonTest.m */; };
 		05EEE55D1841A0A100507C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053F3D9D1834719800CFFA56 /* Main.storyboard */; };
 		05EEE55E1841A13200507C8C /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053F3DA11834719800CFFA56 /* MainController.m */; };
 		6587E47D184D0BC9003C5255 /* Fist@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6587E47B184D0BC9003C5255 /* Fist@2x.png */; };
@@ -73,9 +71,6 @@
 		059BFCAD1845A093005FBD80 /* DGAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGAlertView.m; sourceTree = "<group>"; };
 		05A9E545184C00A6005B6ECE /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		05A9E546184C00A6005B6ECE /* background1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background1136.png; sourceTree = "<group>"; };
-		05EEE5581841918100507C8C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		05EEE5591841918100507C8C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		05EEE55B184191C400507C8C /* PersonTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTest.m; sourceTree = "<group>"; };
 		3B8B0A9B707F4946934DF3FC /* libPods-CocoaPodsTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocoaPodsTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6587E47B184D0BC9003C5255 /* Fist@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fist@2x.png"; sourceTree = "<group>"; };
 		6587E47E184D0DE4003C5255 /* Spotlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotlight.png; sourceTree = "<group>"; };
@@ -150,8 +145,6 @@
 				053F3DA11834719800CFFA56 /* MainController.m */,
 				053F3DA31834719800CFFA56 /* Images.xcassets */,
 				053F3D921834719800CFFA56 /* Supporting Files */,
-				05EEE5581841918100507C8C /* Person.h */,
-				05EEE5591841918100507C8C /* Person.m */,
 				056AF307184441B600F535A0 /* StringHelper.h */,
 				056AF308184441B600F535A0 /* StringHelper.m */,
 				059BFCAC1845A093005FBD80 /* DGAlertView.h */,
@@ -180,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				053F3DB61834719800CFFA56 /* MainControllerTest.m */,
-				05EEE55B184191C400507C8C /* PersonTest.m */,
 				056AF30A184441D000F535A0 /* StringHelperTest.m */,
 				053F3DB11834719800CFFA56 /* Supporting Files */,
 			);
@@ -337,7 +329,6 @@
 				056AF309184441B600F535A0 /* StringHelper.m in Sources */,
 				053F3DA21834719800CFFA56 /* MainController.m in Sources */,
 				053F3D9C1834719800CFFA56 /* AppDelegate.m in Sources */,
-				05EEE55A1841918100507C8C /* Person.m in Sources */,
 				059BFCAE1845A093005FBD80 /* DGAlertView.m in Sources */,
 				053F3D981834719800CFFA56 /* main.m in Sources */,
 			);
@@ -349,7 +340,6 @@
 			files = (
 				056AF30B184441D000F535A0 /* StringHelperTest.m in Sources */,
 				05EEE55E1841A13200507C8C /* MainController.m in Sources */,
-				05EEE55C184191C400507C8C /* PersonTest.m in Sources */,
 				053F3DB71834719800CFFA56 /* MainControllerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
